@@ -34,7 +34,7 @@ test('Verifying Login Functionality', async ({ page }) => {
 
    //Verify Logout Application
   await test.step('Verify Logout functionality.', async()=>{
-  await loginAction.LoginToApplication();
+  await loginAction.LogoutFromApplication();
   
    })
 

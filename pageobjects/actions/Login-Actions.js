@@ -7,8 +7,8 @@ class LoginAction {
     constructor(page) {
         this.page = page;
         this.loginLocator = new LoginLocator(page);
-        this. registerLocator = new RegisterLocator(page);
-        
+        this.registerLocator = new RegisterLocator(page);
+
 
 
     }
@@ -25,27 +25,32 @@ class LoginAction {
         await this.registerLocator.locUsername.fill(username);
         await this.registerLocator.locPassword.fill(password);
         await this.loginLocator.locLoginButton.click();
-        console.log (" login successfully")
-        //await page.waitForTimeout(3000);
-         await expect(this.loginLocator.locVerifyUser).toBeVisible();
-         await expect(this.loginLocator.locVerifyUser).toHaveText(username);
 
+        console.log(" login successfully")
 
-    //   await expect(this.page).toHaveURL(profileURL);
-    //  console.log("After login successfully, the current URL is " + profileURL);
-        
-    }
-        // //Verify Logout Functionality Application
-        //     async LogoutFromApplication() {   ///expected 
-        //      await this.loginLocator.locLogoutButton.click();
+        await expect(this.loginLocator.locVerifyUser).toBeVisible();
+        await expect(this.loginLocator.locVerifyUser).toHaveText(username);
 
-        //    // const loginButtonText = await this.loginLocator.headingAfterLogout;
-        //    // await expect(loginButtonText).toBeVisible();
-        //     console.log("Logout Successfully.");
+        console.log("Verified text")
 
-        //     }
+        //   await expect(this.page).toHaveURL(profileURL);
+        //  console.log("After login successfully, the current URL is " + profileURL);
 
     }
+    //Verify Logout Functionality Application
+    async LogoutFromApplication() {   ///expected 
+        await this.loginLocator.locLogoutButton.waitFor({ state: 'visible' });
+        await this.loginLocator.locLogoutButton.click();
+
+        console.log("Logout Successfully.");
+
+        await expect(this.loginLocator.locLoginButton).toBeVisible();
+        console.log("Verified logout page loaded.");
+
+
+    }
+
+}
 
 
 

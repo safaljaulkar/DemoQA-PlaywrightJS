@@ -4,7 +4,6 @@ const { LoginAction } = require('../pageobjects/actions/Login-Actions')
 const { LoginData } = require('../pageobjects/data/Login-Data')
 const { RegisterAction } = require('../pageobjects/actions/Register-Action')
 const { RegisterData } = require('../pageobjects/data/Register-Data')
-//const { RegAct } = require('../pageobjects/actions/Reg-act')
 
 test('Verifying Registration Functionality', async ({ page }) => {
 
@@ -12,7 +11,7 @@ test('Verifying Registration Functionality', async ({ page }) => {
   const loginData = new LoginData(page);
   const registerAction = new RegisterAction(page);
   const registerData = new RegisterData(page);
-  //const regAct = new RegAct(page);
+ 
 
   //----------------------------------
   // Verify Launch URL
@@ -26,7 +25,6 @@ test('Verifying Registration Functionality', async ({ page }) => {
   //Verify Register new user functionality
   //-----------------------------------------------
   await test.step('Verify Register new user funnctionality.', async () => {
-    // await registerAction.RegisterNewUser();
     await registerAction.RegisterNewUser(registerData.firstname, registerData.lastname, registerData.username, registerData.password);
 
 
