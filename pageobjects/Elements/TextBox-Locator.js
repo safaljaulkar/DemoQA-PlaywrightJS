@@ -13,10 +13,22 @@ this.locCurrentAddress=page.locator('#currentAddress');
 this.locPermanantAddress = page.locator('#permanentAddress')
 this.locSubmit = page.locator('#submit')
 
+this.locCheckBox = page.getByText('Check Box');
+this.locCheckboxchecked = page.locator('//span[@class = "rct-checkbox"]');
+this.expandButton = page.locator('//button[@class = "rct-option rct-option-expand-all"]');
+
+
+
+
+
+
+
+
+
+
 
 
     }
-
 
 }
 module.exports={TextBoxLocator};

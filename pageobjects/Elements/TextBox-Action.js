@@ -1,11 +1,12 @@
 const { expect } = require('@playwright/test')
 const { LoginLocator } = require('../Book Store Element/Login-Locator');
-const {TextBoxLocator} = require('../Elements/TextBox-Locator');
+const { TextBoxLocator } = require('./TextBox-Locator');
 
 
 
 class TextBoxAction {
     constructor(page) {
+
         this.page = page;
         this.loginLocator = new LoginLocator(page)
         this.textBoxLocator = new TextBoxLocator(page);
@@ -35,5 +36,27 @@ class TextBoxAction {
 
         console.log("Text Box functionality verified successfully");
     }
+
+    async VerifyCheckBox() {
+        await this.textBoxLocator.locCheckBox.click();
+        await this.textBoxLocator.expandButton.click();
+        await this.textBoxLocator.locCheckboxchecked.nth(0).click();
+        await this.textBoxLocator.locCheckboxchecked.nth(2).click();
+        await this.textBoxLocator.locCheckboxchecked.nth(6).click()
+
+    }
+
+
+
+
 }
 module.exports = { TextBoxAction };
+
+
+
+
+
+
+
+
+

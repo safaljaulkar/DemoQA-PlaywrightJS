@@ -21,7 +21,6 @@ test('Verifying Elements Functionality', async ({ page }) => {
   //-----------------------------------------------
   await test.step('Launch the application.', async () => {
     await loginAction.gotoURL(bookStoreData.appURL);
-
   })
 
   //-----------------------------------------------
@@ -29,12 +28,17 @@ test('Verifying Elements Functionality', async ({ page }) => {
   //-----------------------------------------------
   await test.step('Verify Text box funationality.', async () => {
     await textBoxAction.VerifyTextBox(elementData.fullName, elementData.email, elementData.currentAddress, elementData.permanantAddeess);
-
-
-
-
-
   })
+
+
+  //-----------------------------------------------
+  //Verify Check box funationality
+  //-----------------------------------------------
+  await test.step('Verify check box funationality.', async () => {
+    await textBoxAction.VerifyCheckBox();
+  })
+
+
 
 
 });
