@@ -1,25 +1,23 @@
 import { test, expect } from '@playwright/test';
 //import { RegisterData } from '../pageobjects/data/Register-Data';
 
-const { LoginAction } = require('../pageobjects/actions/Login-Actions')
-const { LoginData } = require('../pageobjects/data/Login-Data')
-const { RegisterData } = require('../pageobjects/data/Register-Data')
+const { LoginAction } = require('../pageobjects/Book Store Element/Login-Actions')
+const { BookStoreData } = require('../pageobjects/Book Store Element/BookStore-Data')
+
 
 
 
 test('Verifying Login Functionality', async ({ page }) => {
 
-
   const loginAction = new LoginAction(page);
-  const loginData = new LoginData(page);
-  const registerData = new RegisterData(page);
+  const bookStoreData = new BookStoreData(page);
 
 
   //----------------------------------
   // Verify Launch URL
   //----------------------------------
   await test.step('Launch the application.', async () => {
-    await loginAction.gotoURL(loginData.appURL);
+    await loginAction.gotoURL(bookStoreData.appURL);
 
   })
 
@@ -27,19 +25,16 @@ test('Verifying Login Functionality', async ({ page }) => {
   //Verify Login with correcct credentials
   //-----------------------------------------------
   await test.step('Verify Login with correct Credential.', async () => {
-    await loginAction.LoginToApplication(registerData.username, registerData.password, loginData.profileURL, loginData.verifyuser);
+    await loginAction.LoginToApplication(bookStoreData.username, bookStoreData.password, bookStoreData.profileURL, bookStoreData.verifyuser);
 
   })
 
 
-   //Verify Logout Application
-  await test.step('Verify Logout functionality.', async()=>{
-  await loginAction.LogoutFromApplication();
-  
-   })
+  //Verify Logout Application
+  await test.step('Verify Logout functionality.', async () => {
+    await loginAction.LogoutFromApplication();
 
-
-
+  })
 
 
   //await test.step('Verif login with correct username and password.', async () => {

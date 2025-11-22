@@ -1,17 +1,16 @@
 import { test, expect } from '@playwright/test';
 
-const { LoginAction } = require('../pageobjects/actions/Login-Actions')
-const { LoginData } = require('../pageobjects/data/Login-Data')
-const { RegisterAction } = require('../pageobjects/actions/Register-Action')
-const { RegisterData } = require('../pageobjects/data/Register-Data')
+const { LoginAction } = require('../pageobjects/Book Store Element/Login-Actions')
+const { BookStoreData } = require('../pageobjects/Book Store Element/Login-Data')
+const { RegisterAction } = require('../pageobjects/Book Store Element/Register-Action')
 
 test('Verifying Registration Functionality', async ({ page }) => {
 
   const loginAction = new LoginAction(page);
-  const loginData = new LoginData(page);
+  const bookStoreData = new BookStoreData(page);
   const registerAction = new RegisterAction(page);
-  const registerData = new RegisterData(page);
- 
+
+
 
   //----------------------------------
   // Verify Launch URL
@@ -25,7 +24,7 @@ test('Verifying Registration Functionality', async ({ page }) => {
   //Verify Register new user functionality
   //-----------------------------------------------
   await test.step('Verify Register new user funnctionality.', async () => {
-    await registerAction.RegisterNewUser(registerData.firstname, registerData.lastname, registerData.username, registerData.password);
+    await registerAction.RegisterNewUser(bookStoreData.firstname, bookStoreData.lastname, bookStoreData.username, bookStoreData.password);
 
 
   })

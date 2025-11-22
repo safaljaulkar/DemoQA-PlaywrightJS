@@ -1,40 +1,40 @@
 import { test, expect } from '@playwright/test';
 
 
-const { LoginAction } = require('../pageobjects/actions/Login-Actions')
-const { LoginData } = require('../pageobjects/data/Login-Data')
-const { RegisterData } = require('../pageobjects/data/Register-Data')
-const {ElementData} =require('../pageobjects/data/Elements-Data')
-const{ElementAction} = require('../pageobjects/actions/Elements-Action')
+const { LoginAction } = require('../pageobjects/Book Store Element/Login-Actions')
+const { BookStoreData } = require('../pageobjects/Book Store Element/BookStore-Data')
+const { ElementData } = require('../pageobjects/Elements/Elements-Data')
+const { TextBoxAction } = require('../pageobjects/Elements/TextBox-Action')
 
-test('Verifying Login Functionality', async ({ page }) => {
+
+test('Verifying Elements Functionality', async ({ page }) => {
 
 
   const loginAction = new LoginAction(page);
-  const loginData = new LoginData(page);
-  const registerData = new RegisterData(page);
+  const bookStoreData = new BookStoreData(page);
   const elementData = new ElementData(page);
-const elementAction = new ElementAction(page);
+  const textBoxAction = new TextBoxAction(page);
 
 
-
+  //-----------------------------------------------
+  //Launch the application.
+  //-----------------------------------------------
   await test.step('Launch the application.', async () => {
-    await loginAction.gotoURL(loginData.appURL);
+    await loginAction.gotoURL(bookStoreData.appURL);
 
   })
 
-  await test.step('Verify Login with correct Credential.', async () => {
-    await loginAction.LoginToApplication(registerData.username, registerData.password, loginData.profileURL, loginData.verifyuser);
+  //-----------------------------------------------
+  //Verify Text box funationality
+  //-----------------------------------------------
+  await test.step('Verify Text box funationality.', async () => {
+    await textBoxAction.VerifyTextBox(elementData.fullName, elementData.email, elementData.currentAddress, elementData.permanantAddeess);
+
+
+
+
 
   })
-     await test.step('Verify Text bos funationality.', async () => {
-    await elementAction.VerifyTextBox(elementData.fullName,elementData.email,elementData.currentAddress,elementData.permanantAddeess);
-
-
-
-
-
-     })
 
 
 });
