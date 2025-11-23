@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 
-const { LoginAction } = require('../pageobjects/Book Store Element/Login-Actions')
-const { BookStoreData } = require('../pageobjects/Book Store Element/BookStore-Data')
+const { LoginAction } = require('../pageobjects/BookStoreElement/Login-Actions')
+const { BookStoreData } = require('../pageobjects/BookStoreElement/BookStore-Data')
 const { ElementData } = require('../pageobjects/Elements/Elements-Data')
 const { TextBoxAction } = require('../pageobjects/Elements/TextBox-Action')
 
