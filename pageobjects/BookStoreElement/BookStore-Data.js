@@ -17,15 +17,6 @@ this.password = 'Safal@12345';
 
 
 
-       this.password = 'Safal@12345';  
-
-
-
-
-
-
-
-
 }
 }
 

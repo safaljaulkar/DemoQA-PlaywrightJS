@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 const { LoginAction } = require('../pageobjects/BookStoreElement/Login-Actions')
 const { BookStoreData } = require('../pageobjects/BookStoreElement/BookStore-Data')
 const { ElementData } = require('../pageobjects/Elements/Elements-Data')
-const { TextBoxAction } = require('../pageobjects/Elements/TextBox-Action')
+const { ElementsAction } = require('../pageobjects/Elements/Elements-Action')
 
 
 test('Verifying Elements Functionality', async ({ page }) => {
@@ -13,7 +13,7 @@ test('Verifying Elements Functionality', async ({ page }) => {
   const loginAction = new LoginAction(page);
   const bookStoreData = new BookStoreData(page);
   const elementData = new ElementData(page);
-  const textBoxAction = new TextBoxAction(page);
+  const elementsAction = new ElementsAction(page);
 
 
   //-----------------------------------------------
@@ -27,18 +27,32 @@ test('Verifying Elements Functionality', async ({ page }) => {
   //Verify Text box funationality
   //-----------------------------------------------
   await test.step('Verify Text box funationality.', async () => {
-    await textBoxAction.VerifyTextBox(elementData.fullName, elementData.email, elementData.currentAddress, elementData.permanantAddeess);
+    await elementsAction.VerifyTextBox(elementData.fullName, elementData.email, elementData.currentAddress, elementData.permanantAddeess);
   })
 
-
-  //-----------------------------------------------
+  //----------------------------------------------
   //Verify Check box funationality
   //-----------------------------------------------
   await test.step('Verify check box funationality.', async () => {
-    await textBoxAction.VerifyCheckBox();
+    await elementsAction.VerifyCheckBox();
   })
 
+  //----------------------------------------------
+  //Verify Radio Button funationality
+  //-----------------------------------------------
+  await test.step('Verify Radio Button funationality.', async () => {
+    await elementsAction.VerifyRadioButton();
 
+  })
 
+  //----------------------------------------------
+  //Verify Radio Button funationality
+  //-----------------------------------------------
+  await test.step('Verify Web Table funationality.', async () => {
+    await elementsAction.VerifyWebTables(bookStoreData.firstname);
 
-});
+  })
+
+  
+
+  });
