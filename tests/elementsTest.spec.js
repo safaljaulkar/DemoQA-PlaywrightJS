@@ -46,13 +46,25 @@ test('Verifying Elements Functionality', async ({ page }) => {
   })
 
   //----------------------------------------------
-  //Verify Radio Button funationality
+  //Verify Web Table funationality
   //-----------------------------------------------
   await test.step('Verify Web Table funationality.', async () => {
     await elementsAction.VerifyWebTables(bookStoreData.firstname);
 
   })
 
-  
+  //-----------------------------------------------
+  //Verify Buttons Functionality
+  //-----------------------------------------------
+await test.step ('Verify buttons funationality.', async () => {
+ await elementsAction.VerifyButtons();
+
+
+})
+
+
+
+
+
 
   });

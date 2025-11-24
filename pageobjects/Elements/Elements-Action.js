@@ -42,18 +42,18 @@ class ElementsAction {
     //Check Box functionality
     async VerifyCheckBox() {
         await this.elementsLocator.locCheckBox.click();
-        await this.elementsLocator.expandButton.click();
+        await this.elementsLocator.locExpandButton.click();
         await this.elementsLocator.locCheckboxchecked.nth(0).click();
         await this.elementsLocator.locCheckboxchecked.nth(2).click();
         await this.elementsLocator.locCheckboxchecked.nth(6).click()
-        await this.elementsLocator.collapsButton.click();
+        await this.elementsLocator.locCollapsButton.click();
 
         console.log("Check Box functionality verified successfully");
-        await expect(this.page.locator('#result')).toBeVisible();
-        await expect(this.page.locator('#result')).toContainText('home');
-        await expect(this.page.locator('#result')).toContainText('desktop');
-        await expect(this.page.locator('#result')).toContainText('documents');
-        await expect(this.page.locator('#result')).toContainText('downloads');
+        await expect(this.page.locator(this.elementsLocator.locCheckboxTitle)).toBeVisible();
+        await expect(this.page.locator(this.elementsLocator.locCheckboxTitle)).toContainText('home');
+        await expect(this.page.locator(this.elementsLocator.locCheckboxTitle)).toContainText('desktop');
+        await expect(this.page.locator(this.elementsLocator.locCheckboxTitle)).toContainText('documents');
+        await expect(this.page.locator(this.elementsLocator.locCheckboxTitle)).toContainText('downloads');
         console.log("Check Box functionality verified with assertion successfully");
         //await this.waitForTimeout(2000);
     }
@@ -95,8 +95,21 @@ class ElementsAction {
         await this.page.locator('#department').fill('department');
         await this.page.locator('#submit').click();
         console.log("New record added successfully");
-
+        
     }
+// Buttons functionality
+ async VerifyButtons(){
+
+  await this.elementsLocator.locButtons.click();
+  await expect (this.page.elementsLocator.locButtons).toBeVisible();
+  console.log ("Buttons title displays");
+  await this.elementsLocator.locDoubleClickMeButton.dblclick();
+  await this.elementsLocator.locRightClickMeButton.click({ button: 'right' });
+  await this.elementsLocator.locClickMe.click();
+
+
+
+ }
 
 
 
