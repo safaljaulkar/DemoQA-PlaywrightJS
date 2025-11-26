@@ -49,7 +49,7 @@ test('Verifying Elements Functionality', async ({ page }) => {
   //Verify Web Table funationality
   //-----------------------------------------------
   await test.step('Verify Web Table funationality.', async () => {
-    await elementsAction.VerifyWebTables(bookStoreData.firstname);
+    await elementsAction.VerifyWebTables(bookStoreData.firstname, bookStoreData.lastname, elementData.email, elementData.age, elementData.salary, elementData.department);
 
   })
 
@@ -61,10 +61,6 @@ await test.step ('Verify buttons funationality.', async () => {
 
 
 })
+});
 
 
-
-
-
-
-  });

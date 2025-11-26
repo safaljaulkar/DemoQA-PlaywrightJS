@@ -25,6 +25,7 @@ class RegisterAction {
         await this.registerLocator.locLastName.fill(lastname)
         await this.registerLocator.locUsername.fill(username);
         await this.registerLocator.locPassword.fill(password);
+        
         //await this.registerLocator.locCaptcha.click();
         await this.page.waitForTimeout(10000);
         await this.registerLocator.locRegisterButton.click();
