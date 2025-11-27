@@ -42,7 +42,6 @@ test('Verifying Elements Functionality', async ({ page }) => {
   //-----------------------------------------------
   await test.step('Verify Radio Button funationality.', async () => {
     await elementsAction.VerifyRadioButton();
-
   })
 
   //----------------------------------------------
@@ -50,17 +49,33 @@ test('Verifying Elements Functionality', async ({ page }) => {
   //-----------------------------------------------
   await test.step('Verify Web Table funationality.', async () => {
     await elementsAction.VerifyWebTables(bookStoreData.firstname, bookStoreData.lastname, elementData.email, elementData.age, elementData.salary, elementData.department);
-
   })
 
   //-----------------------------------------------
   //Verify Buttons Functionality
   //-----------------------------------------------
-await test.step ('Verify buttons funationality.', async () => {
- await elementsAction.VerifyButtons();
+  await test.step('Verify buttons funationality.', async () => {
+    await elementsAction.VerifyButtons();
+  })
+
+  //-----------------------------------------------
+  //Verify links Functionality
+  //-----------------------------------------------
+  await test.step('Verify links funationality.', async () => {
+    await elementsAction.VerifyLinks();
+  })
+
+  //-------------------------------------------
+  //Verify Broken links Image functionality
+  //-------------------------------------------
+  await test.step('Verify broken link image functionality', async () => {
+    await elementsAction.VerifyBrokenLinkImages();
+  })
 
 
-})
+
+
+
 });
 
 

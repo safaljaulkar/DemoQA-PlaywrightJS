@@ -10,7 +10,7 @@ class ElementsAction {
     constructor(page) {
 
         this.page = page;
-        this.loginLocator = new LoginLocator(page)
+        this.loginLocator = new LoginLocator(page);
         this.elementsLocator = new ElementsLocator(page);
         this.bookStoreData = new BookStoreData(page);
         this.registerLocator = new RegisterLocator(page);
@@ -73,41 +73,66 @@ class ElementsAction {
 
     }
     //Web Tables Functionality
-    async VerifyWebTables(firstname,lastname,email,age,salary,department) {
+    async VerifyWebTables(firstname, lastname, email, age, salary, department) {
         await this.elementsLocator.locWebTables.click();
-        //await expect(this.elementsLocator.locColumnHeader).toBeVisible();
-        console.log("All header title displays");
+        await expect(this.elementsLocator.locColumnHeader).toBeVisible();
 
         //Add New Record
         await this.elementsLocator.locAddNewRecordButton.click();
         await expect(this.elementsLocator.locRegistratioFormTitle).toBeVisible();
-        console.log("Registration Form Title is visible");
         await this.registerLocator.locFirstName.fill(firstname);
         await this.registerLocator.locLastName.fill(lastname);
         await this.elementsLocator.locEmail.fill(email);
-        await this.page.elementsLocator.locAge.fill(age);
-        await this.page.elementsLocator.locSalary.fill(salary);
+        await this.elementsLocator.locAge.fill(age);
+        await this.elementsLocator.locSalary.fill(salary);
         await this.elementsLocator.locDepartment.fill(department);
         await this.elementsLocator.locRegistrationSubmit.click();
         console.log("New record added successfully");
+        console.log("WebTable functionality verified with assertion successfully");
 
     }
     // Buttons functionality
     async VerifyButtons() {
-
         await this.elementsLocator.locButtons.click();
-        await expect(this.elementsLocator.locButtons).toBeVisible();
-        console.log("Buttons title displays");
+        await expect(this.elementsLocator.locButtonTitle).toBeVisible();
         await this.elementsLocator.locDoubleClickMeButton.dblclick();
         await expect(this.elementsLocator.locDoubleClickMessage).toBeVisible();
         await this.elementsLocator.locRightClickMeButton.click({ button: 'right' });
         await expect(this.elementsLocator.locRightClickMessage).toBeVisible();
         await this.elementsLocator.locClickMe.click();
         await expect(this.elementsLocator.locClickMeMessage).toBeVisible();
-        console.log("Buttons functionality verified");
+        console.log("Buttons functionality verified with assertion successfully");
+
+    }
+
+    // Links functionality
+    async VerifyLinks() {
+        await this.elementsLocator.locLinks.click();
+        await this.elementsLocator.locLinksTitle.click();
+        await this.elementsLocator.locHomeLink.click();
+        await this.elementsLocator.locHomeDynamicLink.click();
+        console.log("Links functionality verified with assertion successfully");
+
+    }
+    //BrokenLinkImages functionality
+
+    async VerifyBrokenLinkImages() {
+        await this.elementsLocator.locBrokenLinkImages.click();
+        await expect(this.elementsLocator.locBrokenLinksTitle).toBeVisible();
+        await expect(this.elementsLocator.locValidImg).toBeVisible();
+        await expect(this.elementsLocator.lolocBrokenImgcValidImg).toBeVisible();
+        await this.elementsLocator.locValidLink.click();
+        await this.elementsLocator.locInvalidLink.click();
+        console.log("Broken functionality verified ")
 
 
     }
+
+
+
+
+
+
 
 }
 module.exports = { ElementsAction };
