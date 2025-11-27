@@ -7,11 +7,10 @@ class RegisterLocator {
         this.page = page;
         this.locBookStoreApplication = page.getByText('Book Store Application');
         this.locNewUser = page.locator('#newUser');
-        this.locFirstName = page.locator('#firstname');
-        this.locLastName = page.locator('#lastname');
+        this.locFirstName = page.locator("//input[@placeholder = 'First Name']");
+        this.locLastName = page.locator("//input[@placeholder = 'Last Name']");
         this.locUsername = page.locator('#userName');
         this.locPassword = page.locator('#password');
-        this.locCaptcha = page.locator("//div[@class = 'recaptcha-checkbox-border']");
         this.locRegisterButton = page.locator('#register');
 
 
