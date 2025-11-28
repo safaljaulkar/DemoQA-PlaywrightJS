@@ -74,8 +74,10 @@ class ElementsLocator {
         this.locValidLink = page.locator("//a[text() = 'Click Here for Valid Link']");
         this.locInvalidLink = page.locator("//a[text() = 'Click Here for Broken Link']")
 
-
-
+   //Upload and Download 
+   this.locUploadDownload = page.locator("//span[text() = 'Upload and Download']");
+this.locUploadDownloadTitle = page.locator("//h1[text() = 'Upload and Download']");
+this.locDownloadButton = page.locator('#downloadButton');
 
 
     }

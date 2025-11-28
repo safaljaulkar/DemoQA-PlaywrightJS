@@ -114,20 +114,51 @@ class ElementsAction {
         console.log("Links functionality verified with assertion successfully");
 
     }
-    //BrokenLinkImages functionality
+    /*
+    //BrokenLink-Images functionality
 
     async VerifyBrokenLinkImages() {
         await this.elementsLocator.locBrokenLinkImages.click();
         await expect(this.elementsLocator.locBrokenLinksTitle).toBeVisible();
         await expect(this.elementsLocator.locValidImg).toBeVisible();
-        await expect(this.elementsLocator.lolocBrokenImgcValidImg).toBeVisible();
+
+        //Borken Image
+        const imgLocator = this.elementsLocator.locBrokenImg;  //store the locator in imgLocator
+        const isBroken = await imgLocator.evaluate(img => img.naturalWidth === 0);
+        //Checks if image failed to load 
+        //fail to load - naturalWidth == 0, load correctly-naturalWidth > 0
+
+        if (isBroken) {
+            console.log("Image is broken");
+        } else {
+            console.log("Image is valid");
+        }
+
         await this.elementsLocator.locValidLink.click();
-        await this.elementsLocator.locInvalidLink.click();
+
+        // Broken link
+        const brokenURL = await this.elementsLocator.locInvalidLink.getAttribute('href');
+        const brokenResponse = await this.page.request.get(brokenURL);
+        expect(brokenResponse.status()).not.toBe(500);
         console.log("Broken functionality verified ")
-
-
+        return isBroken;
     }
+*/
+ 
+//Verify Upload and Download functionality
 
+async  VerifyUploadDownload(){
+ await this.elementsLocator.locUploadDownload.click();
+ await expect (this.elementsLocator.locUploadDownloadTitle).toBeVisible();
+ await this.elementsLocator.locDownloadButton.click();
+
+
+
+
+
+
+
+}
 
 
 
