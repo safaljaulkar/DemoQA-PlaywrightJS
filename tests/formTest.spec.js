@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-const { FormAction } = require('../pageobjects/Forms/Form-Action')
-const { BookStoreData } = require('../pageobjects/BookStoreElement/BookStore-Data')
-const { FormData } = require('../pageobjects/Forms/Form-Data')
-const { LoginAction } = require('../pageobjects/BookStoreElement/Login-Actions')
+const { FormAction } = require('../Actions/Form-Action')
+const { BookStoreData } = require('../Data/BookStore-Data')
+const { FormData } = require('../Data/Form-Data')
+const { LoginAction } = require('../Actions/Login-Actions')
 
 test('Verifying Form Functionality', async ({ page }) => {
 

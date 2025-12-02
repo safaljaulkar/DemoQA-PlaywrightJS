@@ -1,8 +1,8 @@
 const { expect } = require('@playwright/test')
-const { LoginLocator } = require('../BookStoreElement/Login-Locator');
-const { ElementsLocator } = require('./Elements-Locator');
-const { BookStoreData } = require('../BookStoreElement/BookStore-Data');
-const { RegisterLocator } = require('../BookStoreElement/Register-Locator');
+const { LoginLocator } = require('../Locators/Login-Locator');
+const { ElementsLocator } = require('../Locators/Elements-Locator');
+const { BookStoreData } = require('../Data/BookStore-Data');
+const { RegisterLocator } = require('../Locators/Register-Locator');
 
 
 

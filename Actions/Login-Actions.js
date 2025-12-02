@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test')
-const {LoginLocator}= require('../BookStoreElement/Login-Locator');
-const {RegisterLocator}= require ('./Register-Locator');
+const {LoginLocator}= require('../Locators/Login-Locator');
+const {RegisterLocator}= require ('../Locators/Register-Locator');
 
 
 class LoginAction {

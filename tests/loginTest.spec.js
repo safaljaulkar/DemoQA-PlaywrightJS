@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 //import { RegisterData } from '../pageobjects/data/Register-Data';
 
-const { LoginAction } = require('../pageobjects/BookStoreElement/Login-Actions');
-const { BookStoreData } = require('../pageobjects/BookStoreElement/BookStore-Data');
+const { LoginAction } = require('../Actions/Login-Actions');
+const { BookStoreData } = require('../Data/BookStore-Data');
 
 
 

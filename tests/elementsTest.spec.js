@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 
-const { LoginAction } = require('../pageobjects/BookStoreElement/Login-Actions')
-const { BookStoreData } = require('../pageobjects/BookStoreElement/BookStore-Data')
-const { ElementData } = require('../pageobjects/Element/Elements-Data')
-const { ElementsAction } = require('../pageobjects/Element/Elements-Action')
+const { LoginAction } = require('../Actions/Login-Actions')
+const { BookStoreData } = require('../Data/BookStore-Data')
+const { ElementData } = require('../Data/Elements-Data')
+const { ElementsAction } = require('../Actions/Elements-Action')
 
 
 test('Verifying Elements Functionality', async ({ page }) => {

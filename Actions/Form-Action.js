@@ -1,8 +1,8 @@
 const { expect } = require('@playwright/test')
 
-const { RegisterLocator } = require('../BookStoreElement/Register-Locator')
-const { FormLocator } = require('./Form-Locator')
-const { LoginLocator } = require('../BookStoreElement/Login-Locator')
+const { RegisterLocator } = require('../Locators/Register-Locator')
+const { FormLocator } = require('../Locators/Form-Locator')
+const { LoginLocator } = require('../Locators/Login-Locator')
 
 class FormAction {
         constructor(page) {
@@ -50,11 +50,11 @@ class FormAction {
 
                 await this.formLocator.locHobbies.click();
                 console.log("hobbies selected ")
-                // await this.formLocator.locChooseFile.SetInputFiles('pageobjects/Forms/pexels-lilartsy-1213447.jpg')
+                await this.formLocator.locChooseFile.SetInputFiles('pageobjects/Forms/pexels-lilartsy-1213447.jpg')
 
                 //  console.log("file selected  ")
-                // await this.formLocator.locCurrentAddress.fill(CurrentAddress)
-                //    await this.formLocator.locStateandCityDropdown.selectOption({label: 'NCR'})
+                await this.formLocator.locCurrentAddress.fill(CurrentAddress)
+                await this.formLocator.locStateandCityDropdown.selectOption({ label: 'NCR' })
                 await this.formLocator.locSubmit.click();
 
 
