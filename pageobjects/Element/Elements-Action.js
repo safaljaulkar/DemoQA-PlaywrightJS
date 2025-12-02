@@ -153,17 +153,7 @@ async  VerifyUploadDownload(){
  await this.elementsLocator.locDownloadButton.click();
 
 
-
-
-
-
-
 }
-
-
-
-
-
 
 }
 module.exports = { ElementsAction };

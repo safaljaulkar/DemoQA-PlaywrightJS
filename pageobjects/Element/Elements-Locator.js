@@ -79,7 +79,7 @@ class ElementsLocator {
 this.locUploadDownloadTitle = page.locator("//h1[text() = 'Upload and Download']");
 this.locDownloadButton = page.locator('#downloadButton');
 
-
     }
+    
 }
 module.exports = { ElementsLocator };
