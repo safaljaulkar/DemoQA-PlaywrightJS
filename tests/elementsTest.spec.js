@@ -5,7 +5,7 @@ const { LoginAction } = require('../Actions/Login-Actions')
 const { BookStoreData } = require('../Data/BookStore-Data')
 const { ElementData } = require('../Data/Elements-Data')
 const { ElementsAction } = require('../Actions/Elements-Action')
-
+const{CommonData} = require('../Data/CommonData')
 
 test('Verifying Elements Functionality', async ({ page }) => {
 
@@ -14,20 +14,20 @@ test('Verifying Elements Functionality', async ({ page }) => {
   const bookStoreData = new BookStoreData(page);
   const elementData = new ElementData(page);
   const elementsAction = new ElementsAction(page);
-
+   const commonData = new CommonData(page);
 
   //-----------------------------------------------
   //Launch the application.
   //-----------------------------------------------
   await test.step('Launch the application.', async () => {
-    await loginAction.gotoURL(bookStoreData.appURL);
+    await loginAction.gotoURL(commonData.appURL);
   })
 
   //-----------------------------------------------
   //Verify Text box funationality
   //-----------------------------------------------
   await test.step('Verify Text box funationality.', async () => {
-    await elementsAction.VerifyTextBox(elementData.fullName, elementData.email, elementData.currentAddress, elementData.permanantAddeess);
+    await elementsAction.VerifyTextBox(commonData.fullName, commonData.email, commonData.currentAddress, commonData.permanantAddeess);
   })
 
   //----------------------------------------------
@@ -48,7 +48,7 @@ test('Verifying Elements Functionality', async ({ page }) => {
   //Verify Web Table funationality
   //-----------------------------------------------
   await test.step('Verify Web Table funationality.', async () => {
-    await elementsAction.VerifyWebTables(bookStoreData.firstname, bookStoreData.lastname, elementData.email, elementData.age, elementData.salary, elementData.department);
+    await elementsAction.VerifyWebTables(commonData.firstname, commonData.lastname, commonData.email, elementData.age, elementData.salary, elementData.department);
   })
 
   //-----------------------------------------------

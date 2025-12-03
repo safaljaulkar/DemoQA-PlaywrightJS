@@ -50,11 +50,11 @@ class FormAction {
 
                 await this.formLocator.locHobbies.click();
                 console.log("hobbies selected ")
-                await this.formLocator.locChooseFile.SetInputFiles('pageobjects/Forms/pexels-lilartsy-1213447.jpg')
+              //  await this.formLocator.locChooseFile.SetInputFiles('pageobjects/Forms/pexels-lilartsy-1213447.jpg')
 
                 //  console.log("file selected  ")
                 await this.formLocator.locCurrentAddress.fill(CurrentAddress)
-                await this.formLocator.locStateandCityDropdown.selectOption({ label: 'NCR' })
+                await this.formLocator.locStateAndCityDropdown.selectOption("NCR")
                 await this.formLocator.locSubmit.click();
 
 

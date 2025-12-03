@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
-//import { RegisterData } from '../pageobjects/data/Register-Data';
 
 const { LoginAction } = require('../Actions/Login-Actions');
 const { BookStoreData } = require('../Data/BookStore-Data');
-
+const{CommonData} = require('../Data/CommonData')
 
 
 
@@ -11,13 +10,13 @@ test('Verifying Login Functionality', async ({ page }) => {
 
   const loginAction = new LoginAction(page);
   const bookStoreData = new BookStoreData(page);
-
+  const commonData = new CommonData(page);
 
   //----------------------------------
   // Verify Launch URL
   //----------------------------------
   await test.step('Launch the application.', async () => {
-    await loginAction.gotoURL(bookStoreData.appURL);
+    await loginAction.gotoURL(commonData.appURL);
 
   })
 
@@ -25,7 +24,7 @@ test('Verifying Login Functionality', async ({ page }) => {
   //Verify Login with correcct credentials
   //-----------------------------------------------
   await test.step('Verify Login with correct Credential.', async () => {
-    await loginAction.LoginToApplication(bookStoreData.username, bookStoreData.password, bookStoreData.profileURL, bookStoreData.verifyuser);
+    await loginAction.LoginToApplication(commonData.username, commonData.password, bookStoreData.profileURL, bookStoreData.verifyuser);
 
   })
 

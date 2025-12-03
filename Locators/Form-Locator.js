@@ -23,7 +23,7 @@ class FormLocator {
         this.locHobbies = page.locator("//div[@class = 'col-md-9 col-sm-12']//label[text() = 'Sports']")
         this.locChooseFile = page.locator("#uploadPicture")
         this.locCurrentAddress = page.locator("#currentAddress")
-        this.locStateandCityDropdown = page.locator("//div[@class = ' css-tlfecz-indicatorContainer']")
+        this.locStateAndCityDropdown = page.locator("//div[@class = ' css-2b097c-container']//div[@class = ' css-tlfecz-indicatorContainer']")
         this.locSubmit = page.locator("#submit")
 
 
