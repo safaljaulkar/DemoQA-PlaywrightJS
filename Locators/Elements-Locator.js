@@ -13,7 +13,7 @@ class ElementsLocator {
         this.locEmail = page.locator('#userEmail');
         this.locCurrentAddress = page.locator('#currentAddress');
         this.locPermanantAddress = page.locator('#permanentAddress')
-        this.locSubmit = page.locator('#submit')
+     
 
         //CheckBox locators
         this.locCheckBox = page.getByText('Check Box');

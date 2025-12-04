@@ -1,14 +1,15 @@
 const { expect } = require('@playwright/test')
-const {LoginLocator}= require('../Locators/Login-Locator');
-const {RegisterLocator}= require ('../Locators/Register-Locator');
-
+const { LoginLocator } = require('../Locators/Login-Locator');
+const { RegisterLocator } = require('../Locators/Register-Locator');
+const { CommonLocator } = require('../Locators/Common-Locator')
 
 class LoginAction {
     constructor(page) {
         this.page = page;
         this.loginLocator = new LoginLocator(page);
         this.registerLocator = new RegisterLocator(page);
-
+        this.commonLocator = new CommonLocator(page);
+        
     }
     //Launch Application
     async gotoURL(str_URLName) {

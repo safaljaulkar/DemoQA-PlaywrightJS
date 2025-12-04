@@ -1,6 +1,7 @@
 const { expect } = require('@playwright/test')
 const { LoginLocator } = require('../Locators/Login-Locator');
 const { RegisterLocator } = require('../Locators/Register-Locator');
+const { CommonLocator } = require('../Locators/Common-Locator')
 
 
 class RegisterAction {
@@ -8,6 +9,7 @@ class RegisterAction {
         this.page = page;
         this.loginLocator = new LoginLocator(this.page);
         this.registerLocator = new RegisterLocator(this.page);
+        this.commonLocator = new CommonLocator(page);
     }
 
 
@@ -25,7 +27,7 @@ class RegisterAction {
         await this.registerLocator.locLastName.fill(lastname)
         await this.registerLocator.locUsername.fill(username);
         await this.registerLocator.locPassword.fill(password);
-        
+
         //await this.registerLocator.locCaptcha.click();
         await this.page.waitForTimeout(10000);
         await this.registerLocator.locRegisterButton.click();

@@ -3,7 +3,7 @@ const { LoginLocator } = require('../Locators/Login-Locator');
 const { ElementsLocator } = require('../Locators/Elements-Locator');
 const { BookStoreData } = require('../Data/BookStore-Data');
 const { RegisterLocator } = require('../Locators/Register-Locator');
-
+const {CommonLocator} = require('../Locators/Common-Locator')
 
 
 class ElementsAction {
@@ -14,6 +14,7 @@ class ElementsAction {
         this.elementsLocator = new ElementsLocator(page);
         this.bookStoreData = new BookStoreData(page);
         this.registerLocator = new RegisterLocator(page);
+        this.commonLocator = new CommonLocator(page);
     }
     //Launch Application
     async gotoURL(str_URLName) {
@@ -32,7 +33,7 @@ class ElementsAction {
         await this.elementsLocator.locEmail.fill(email);
         await this.elementsLocator.locCurrentAddress.fill(currentAddress);
         await this.elementsLocator.locPermanantAddress.fill(permanantAddeess);
-        await this.elementsLocator.locSubmit.click();
+        await this.commonLocator.locSubmit.click();
 
         // Assertion
         await expect(this.page.locator('#name')).toContainText(fullName);
