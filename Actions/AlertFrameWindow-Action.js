@@ -19,8 +19,11 @@ class AlertFrameWindowAction {
         console.log("Title Verified");
     }
   
-    async VerifyAlertFrameWindow(){
+    async VerifyBrowserWindow(){
 
+      await this.alertFrameWindowLocator.locAlertFrameWindow.click();
+      await this.alertFrameWindowLocator.locBrowserWindowsButton.click();
+    await this.alertFrameWindowLocator.locNewTab.click();
 
 
 

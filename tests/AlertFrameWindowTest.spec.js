@@ -24,8 +24,8 @@ test('Verify AlertFrameWindow functionality@regression', async ({ page }) => {
 
   })
 
-  await test.step('Verify AlertFrameWindow', async () => {
-    await alertFrameWindowAction.VerifyAlertFrameWindow();
+  await test.step('Verify VerifyBrowserWindow', async () => {
+    await alertFrameWindowAction.VerifyBrowserWindow();
 
 
   })

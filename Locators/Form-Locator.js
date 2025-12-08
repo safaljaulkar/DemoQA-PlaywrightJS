@@ -9,12 +9,10 @@ class FormLocator {
         this.locForms = this.page.locator("//h5[contains(text(), 'Forms')]");
         this.locPracticeForm = this.page.locator("//span[contains(text(), 'Practice Form')]");
         this.locPracticeFormTitle = this.page.locator("//h1[contains(text(), 'Practice Form')]");
-
         this.locFormHeading = page.locator("//h5[contains(text(), 'Student Registration Form')]")
         this.locGender = page.locator("//label[text() = 'Male']")
         this.locEmaild = page.locator("//input[@placeholder = 'name@example.com']")
         this.locMobileNo = page.locator("//input[@placeholder = 'Mobile Number']")
-
         this.locCalendar = page.locator("//input[@id = 'dateOfBirthInput']")
         this.locCalendarYear = page.locator("//select[@class = 'react-datepicker__year-select']")
         this.locCalendarMonth = page.locator("//select[@class = 'react-datepicker__month-select']")
@@ -23,24 +21,24 @@ class FormLocator {
         this.locHobbies = page.getByText('Sports')
         this.locChooseFile = page.locator("#uploadPicture")
         this.locCurrentAddress = page.locator("#currentAddress")
-
-        //this.locStateDropdown = page.locator("//div[@id='state']//div[contains(@class,' css-11unzgr')]/div")
-        this.locDropdownClick = page.locator('.css-19bqh2r')
-        this.locStateAndDropdown = page.locator('.css-tlfecz-indicatorContainer > .css-19bqh2r')
+        this.locDropdownClick = page.locator("(//*[@class = 'css-19bqh2r'])[5]")
+        this.locStateAndDropdown = page.locator("(//*[@class = 'css-19bqh2r'])[6]")
 
         this.locSubmit = page.locator("#submit")
-        this.locSubmittingFormTitle = page.getByText('Thanks for submitting the form')
-        this.locStudentNametitle = page.getByText('Student Name')
-        this.locStudentEmailtitle = page.getByText('Student Email')
-        this.locStudentGendertitle = page.getByText('Gender')
-        this.locStudentMobiletitle = page.getByText('Mobile')
-        this.locStudentDOBtitle = page.getByText('Date of Birth')
-        this.locStudentSubjecttitle = page.getByText('Subjects')
-        this.locStudentHobbiestitle = page.getByText('Hobbies')
-        this.locStudentPicturetitle = page.getByText('Picture')
-        this.locStudentAddresstitle = page.getByText('Address')
-this.locStateAndCity = page.getByText('State and City')
-     this.locCloseBytton = page.locator('#closeLargeModal')
+
+        this.locSubmittingFormTitle = page.locator("//div[@id = 'example-modal-sizes-title-lg']");
+        this.locStudentNametitle = page.locator("//td[contains(text(), 'Safal Jaulkar')]");
+        this.locStudentEmailtitle = page.locator("//td[contains(text(), 'safalj@yopmail.com')]");
+        this.locStudentGendertitle = page.locator("//td[contains(text(), 'Male')]");
+        this.locStudentMobiletitle = page.locator("//td[contains(text(), '9895656544')]");
+        this.locStudentDOBtitle = page.locator("//td[contains(text(), '28 September,1997')]")
+        this.locStudentSubjecttitle = page.locator("//td[contains(text(), 'Maths, English, Computer Science')]")
+        this.locStudentHobbiestitle = page.locator("//td[contains(text(), 'Sports')]")
+        this.locStudentPicturetitle = page.locator("//td[contains(text(), 'pexels-lilartsy.jpg')]")
+        this.locStudentAddresstitle = page.locator("//td[contains(text(), 'Great nag road, Newyork')]")
+        this.locStateAndCity = page.locator("//td[contains(text(), 'NCR Delhi')]")
+
+        this.locCloseButton = page.locator("//button[@id =  'closeLargeModal']")
 
 
 

@@ -65,57 +65,34 @@ class FormAction {
                 //dropdown selection
                 //We can also use '.selectOptions' method but here dropdown options are not visible.
 
-                // await this.formLocator.locDropdownClick.first().click();    //here clicking the dropdown first to open state dropdown
-                // await page.getByText('NCR', { exact: true }).click();     //selecting state as NCR and to ensure exact click, used exact: true
-                // await this.formLocator.locStateAndDropdown.click();       //pointing city dropdown arrow
-                // await page.getByText('Delhi', { exact: true }).click();   //selecting city as Delhi and to ensure exact click, used exact: true
-
-                await this.page.locator("(//*[@class = 'css-19bqh2r'])[5]").first().click();
+                await this.formLocator.locDropdownClick.first().click();    //here clicking the dropdown first to open state dropdown
                 await this.page.waitForTimeout(1000); // 1 second
-
-                await this.page.getByText('NCR', { exact: true }).click();
+                await this.page.getByText('NCR', { exact: true }).click();  //selecting state as NCR and to ensure exact click, used exact: true
                 await this.page.waitForTimeout(1000); // 1 second
-                await this.page.locator("(//*[@class = 'css-19bqh2r'])[6]").click();
+                await this.formLocator.locStateAndDropdown.click();       //pointing city dropdown arrow
                 await this.page.waitForTimeout(1000); // 1 second
-                await this.page.getByText('Delhi', { exact: true }).click();
-
-
+                await this.page.getByText('Delhi', { exact: true }).click();    //selecting city as Delhi and to ensure exact click, used exact: true
 
 
                 await this.commonLocator.locSubmit.click();
+                console.log('Form submitted successfully')
+                //Asssertion
                 await expect(this.formLocator.locSubmittingFormTitle).toBeVisible();
-                await expect(this.formLocator.locStudentNametitle).toContainText('Safal Jaulkar')
-                await expect(this.formLocator.locStudentEmailtitle).toContainText('safalj@yopmail.com')
-                await expect(this.formLocator.locStudentGendertitle).toContainText('Male')
-                await expect(this.formLocator.locStudentMobiletitle).toContainText('9895656544')
-                await expect(this.formLocator.locStudentDOBtitle).toContainText('28 Sep 1997')
-                await expect(this.formLocator.locStudentSubjecttitle).toContainText('Math, English, Science')
-                await expect(this.formLocator.locStudentHobbiestitle).toContainText('Sports')
-                await expect(this.formLocator.locStudentPicturetitle).toContainText('pexels-lilartsy.jpg')
-                await expect(this.formLocator.locStudentAddresstitle).toContainText('Great nag road, Newyork')
-                await expect(this.formLocator.locStateAndCity).toContainText('NCR Delhi')
+                await expect(this.formLocator.locStudentNametitle).toContainText("Safal Jaulkar");
+                await expect(this.formLocator.locStudentEmailtitle).toContainText('safalj@yopmail.com');
+                await expect(this.formLocator.locStudentGendertitle).toContainText('Male');
+                await expect(this.formLocator.locStudentMobiletitle).toContainText('9895656544');
+                await expect(this.formLocator.locStudentDOBtitle).toContainText('28 September,1997');
+                await expect(this.formLocator.locStudentSubjecttitle).toContainText('Maths, English, Computer Science');
+                await expect(this.formLocator.locStudentHobbiestitle).toContainText('Sports');
+                await expect(this.formLocator.locStudentPicturetitle).toContainText('pexels-lilartsy.jpg');
+                await expect(this.formLocator.locStudentAddresstitle).toContainText('Great nag road, Newyork');
+                await expect(this.formLocator.locStateAndCity).toContainText('NCR Delhi');
 
-                /*
-                const expectedData = {
-                    locStudentNametitle: 'Safal Jaulkar',
-                    locStudentEmailtitle: 'safalj@yopmail.com',
-                    locStudentGendertitle: 'Male',
-                    locStudentMobiletitle: '9895656544',
-                    locStudentDOBtitle: '28 Sep 1997',
-                    locStudentSubjecttitle: 'Math, English, Science',
-                    locStudentHobbiestitle: 'Sports',
-                    locStudentPicturetitle: 'pexels-lilartsy.jpg',
-                    locStudentAddresstitle: 'Great nag road, Newyork'
-                    locStateAndCity: 'NCR Delhi'
-                };
-                
-                for (const key in expectedData) {
-                    await expect(this.formLocator[key]).toContainText(expectedData[key]);
-                }
-                */
-                console.log('verified assertion')
 
-                await this.formLocator.locCloseBytton.click();
+                console.log('Verified form functionality with assertion')
+
+                await this.formLocator.locCloseButton.click();
 
 
 

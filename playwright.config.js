@@ -39,6 +39,7 @@ module.exports = defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    video: 'on-first-retry',
     trace: 'on-first-retry',
     // i added this
     baseURL: 'https://192.168.22.225/now',
