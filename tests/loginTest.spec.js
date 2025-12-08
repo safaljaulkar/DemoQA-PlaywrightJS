@@ -6,7 +6,7 @@ const{CommonData} = require('../Data/CommonData')
 
 
 
-test('Verifying Login Functionality', async ({ page }) => {
+test('Verifying Login Functionality@sanity', async ({ page }) => {
 
   const loginAction = new LoginAction(page);
   const bookStoreData = new BookStoreData(page);

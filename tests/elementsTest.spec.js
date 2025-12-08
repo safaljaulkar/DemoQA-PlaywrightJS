@@ -7,7 +7,9 @@ const { ElementData } = require('../Data/Elements-Data')
 const { ElementsAction } = require('../Actions/Elements-Action')
 const{CommonData} = require('../Data/CommonData')
 
-test('Verifying Elements Functionality', async ({ page }) => {
+
+
+test('Elements@regression', async ({ page }) => {
 
 
   const loginAction = new LoginAction(page);

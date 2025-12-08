@@ -10,7 +10,7 @@ class FormData {
         this.subject1 = 'Math';
         this.subject2 = 'English';
         this.subject3 = 'Science';
-        this.selectedFile = 'C:\Users\admin\Downloads\pexels-lilartsy-1213447.jpg'
+        
       
     }
 

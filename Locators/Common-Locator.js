@@ -7,7 +7,6 @@ class CommonLocator {
         this.page = page;
 
         this.locForms = this.page.locator("//h5[contains(text(), 'Forms')]");
-
         this.locSubmit = page.locator("#submit")
 
 

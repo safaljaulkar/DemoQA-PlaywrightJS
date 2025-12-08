@@ -23,9 +23,10 @@ class FormLocator {
         this.locHobbies = page.getByText('Sports')
         this.locChooseFile = page.locator("#uploadPicture")
         this.locCurrentAddress = page.locator("#currentAddress")
-        this.locStateAndCityDropdown = page.locator("//div[@class = ' css-2b097c-container']//div[@class = ' css-tlfecz-indicatorContainer']")
-        //this.locStateAndCityDropdown = page.locator('.css-19bqh2r')
-  this.locSelectCity = page.locator('.css-tlfecz-indicatorContainer > .css-19bqh2r');
+
+        //this.locStateDropdown = page.locator("//div[@id='state']//div[contains(@class,' css-11unzgr')]/div")
+        this.locDropdownClick = page.locator('.css-19bqh2r')
+        this.locStateAndDropdown = page.locator('.css-tlfecz-indicatorContainer > .css-19bqh2r')
 
         this.locSubmit = page.locator("#submit")
         this.locSubmittingFormTitle = page.getByText('Thanks for submitting the form')
@@ -38,8 +39,8 @@ class FormLocator {
         this.locStudentHobbiestitle = page.getByText('Hobbies')
         this.locStudentPicturetitle = page.getByText('Picture')
         this.locStudentAddresstitle = page.getByText('Address')
-
-
+this.locStateAndCity = page.getByText('State and City')
+     this.locCloseBytton = page.locator('#closeLargeModal')
 
 
 
