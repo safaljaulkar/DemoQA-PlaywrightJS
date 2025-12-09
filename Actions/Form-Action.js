@@ -6,6 +6,7 @@ const { LoginLocator } = require('../Locators/Login-Locator')
 const { CommonLocator } = require('../Locators/Common-Locator')
 
 class FormAction {
+
         constructor(page) {
                 this.page = page;
                 this.formLocator = new FormLocator(page);
@@ -14,6 +15,7 @@ class FormAction {
                 this.commonLocator = new CommonLocator(page);
 
         }
+
         //Launch Application
         async gotoURL(str_URLName) {
                 await this.page.goto(str_URLName);
