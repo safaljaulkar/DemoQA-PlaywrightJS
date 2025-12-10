@@ -1,24 +1,22 @@
 import { test, expect } from '@playwright/test';
 
 const { FormAction } = require('../Actions/Form-Action')
-const { FormData } = require('../Data/Form-Data')
-const { LoginAction } = require('../Actions/Login-Actions')
-const { CommonData } = require('../Data/CommonData')
+
 
 test('Verifying Form Functionality@regression', async ({ page }) => {
 
   const formAction = new FormAction(page);
   const formData = new FormData(page);
-  const loginAction = new LoginAction(page);
   const commonData = new CommonData(page);
 
   //-----------------------------------------------
   //Launch the application.
   //-----------------------------------------------
-  await test.step('Launch the application.', async () => {
-    await loginAction.gotoURL(commonData.appURL);
-  })
+  //await test.step('Launch the application.', async () => {
+   // await loginAction.gotoURL(commonData.appURL);
+ // })
 
+ await formAction.launchApplication(commonData.appURL);
 
   //--------------------------------------------------------
   //Verify Form functionality
@@ -29,7 +27,6 @@ test('Verifying Form Functionality@regression', async ({ page }) => {
 
 
   })
-
 
 
 });

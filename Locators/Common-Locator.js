@@ -8,7 +8,7 @@ class CommonLocator {
 
         this.locForms = this.page.locator("//h5[contains(text(), 'Forms')]");
         this.locSubmit = page.locator("#submit")
-
+this.locToolsQATitle = page.locator("img[src='/images/Toolsqa.jpg']");
 
     }
 }

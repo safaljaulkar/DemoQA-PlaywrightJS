@@ -7,7 +7,6 @@ class BookStoreData{
 constructor (page){
 
 this.page=page;
-this.appURL= 'https://demoqa.com/'
 this.profileURL = 'https://demoqa.com/profile'
 this.verifyuser = 'safaljaulkar'
 this.username = 'safaljaulkar';

@@ -2,28 +2,21 @@ const { expect } = require('@playwright/test')
 
 const { RegisterLocator } = require('../Locators/Register-Locator')
 const { FormLocator } = require('../Locators/Form-Locator')
-const { LoginLocator } = require('../Locators/Login-Locator')
 const { CommonLocator } = require('../Locators/Common-Locator')
+const { BaseAction } = require("./BaseAction")
 
-class FormAction {
+
+class FormAction extends BaseAction {     //FormAction inheriting all properties and function from BaseAction
 
         constructor(page) {
-                this.page = page;
+
+                super(page);    //Extending another class so we have to use super(page); 
                 this.formLocator = new FormLocator(page);
                 this.registerLocator = new RegisterLocator(page);
-                this.loginLocator = new LoginLocator(page);
+
                 this.commonLocator = new CommonLocator(page);
 
         }
-
-        //Launch Application
-        async gotoURL(str_URLName) {
-                await this.page.goto(str_URLName);
-                console.log("hitting the URL: " + str_URLName);
-                await expect(this.loginLocator.locToolsQATitle).toBeVisible();
-                console.log("Title Verified");
-        }
-
 
         async verifyFormFunctionality(firstname, lastname, emailId, mobileNumber, subject1, subject2, subject3, CurrentAddress) {
 

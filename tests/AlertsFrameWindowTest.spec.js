@@ -25,13 +25,12 @@ test('Verifying Form Functionality@regression', async ({ page }) => {
 
 
   })
-/*
+  
 //Verify VerifyAlerts
   await test.step('Verify alerts', async () => {
     await alertFrameWindowAction.VerifyAlerts();
 
   })
- */
-
+ 
 
 });
